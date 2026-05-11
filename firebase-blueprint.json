@@ -1,0 +1,143 @@
+{
+  "entities": {
+    "Sermon": {
+      "title": "Sermon",
+      "description": "A church sermon video/audio entry",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "speaker": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "videoUrl": { "type": "string" },
+        "audioUrl": { "type": "string" },
+        "description": { "type": "string" },
+        "topic": { "type": "string" },
+        "thumbnail": { "type": "string" }
+      },
+      "required": ["title", "speaker", "date"]
+    },
+    "Event": {
+      "title": "Event",
+      "description": "A church-organized event",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "location": { "type": "string" },
+        "description": { "type": "string" },
+        "registrationLink": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "category": { "type": "string", "enum": ["Conference", "Worship Night", "Youth", "Outreach", "Other"] }
+      },
+      "required": ["title", "date", "location"]
+    },
+    "Ministry": {
+      "title": "Ministry",
+      "description": "A specific church ministry",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "contactEmail": { "type": "string", "format": "email" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "description"]
+    },
+    "Pastor": {
+      "title": "Pastor",
+      "description": "A church leadership profile",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "bio": { "type": "string" },
+        "image": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["name", "role"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "A user-submitted testimonial",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "message": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "message"]
+    },
+    "Campus": {
+      "title": "Campus",
+      "description": "A church branch location",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "phone": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "address"]
+    },
+    "GivingGoal": {
+      "title": "GivingGoal",
+      "description": "A fundraising or donation target",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "currentAmount": { "type": "number" },
+        "targetAmount": { "type": "number" },
+        "description": { "type": "string" }
+      },
+      "required": ["title", "targetAmount"]
+    },
+    "PrayerRequest": {
+      "title": "PrayerRequest",
+      "description": "A prayer request submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "request": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["request", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/sermons/{sermonId}": {
+      "schema": "Sermon",
+      "description": "Collection of recorded sermons"
+    },
+    "/events/{eventId}": {
+      "schema": "Event",
+      "description": "Upcoming and past church events"
+    },
+    "/ministries/{ministryId}": {
+      "schema": "Ministry",
+      "description": "Information about different ministries"
+    },
+    "/pastors/{pastorId}": {
+      "schema": "Pastor",
+      "description": "Leadership team profiles"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "Testimonial",
+      "description": "Member testimonials"
+    },
+    "/campuses/{campusId}": {
+      "schema": "Campus",
+      "description": "Church branch locations"
+    },
+    "/giving_goals/{goalId}": {
+      "schema": "GivingGoal",
+      "description": "Public donation goals"
+    },
+    "/prayer_requests/{requestId}": {
+      "schema": "PrayerRequest",
+      "description": "Submitted prayer requests"
+    }
+  }
+}

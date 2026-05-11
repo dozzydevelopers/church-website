@@ -1,0 +1,6 @@
+{
+  "name": "Faith and Grace House",
+  "description": "A modern, world-class church website with live streaming, sermon galleries, and community engagement features. Inspired by contemporary worship aesthetics.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

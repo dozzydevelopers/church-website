@@ -1,0 +1,69 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      // In a real app, we'd check a dedicated admins collection or custom claims
+      // For this demo, let's allow read for all and write for a specific email or if we assume admin role
+      return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Sermon rules
+    match /sermons/{sermonId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Event rules
+    match /events/{eventId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Ministry rules
+    match /ministries/{ministryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Pastor rules
+    match /pastors/{pastorId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Testimonial rules
+    match /testimonials/{testimonialId} {
+      allow read: if true;
+      allow create: if isSignedIn();
+      allow update, delete: if isAdmin();
+    }
+
+    // Campus rules
+    match /campuses/{campusId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // GivingGoal rules
+    match /giving_goals/{goalId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // PrayerRequest rules
+    match /prayer_requests/{requestId} {
+      allow create: if true; // Allow anyone to submit a prayer request
+      allow read: if isAdmin(); // Only admins can see lists of requests
+    }
+  }
+}
