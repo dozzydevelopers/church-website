@@ -9,12 +9,17 @@ export default function Footer() {
     <footer className="bg-neutral-950 text-neutral-400 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6 col-span-1 md:col-span-1">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-brand-red rounded flex items-center justify-center">
-              <span className="text-white font-bold">{CHURCH_SHORT_NAME[0]}</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-brand-red rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-brand-red/20">
+                <span className="text-white font-black text-lg italic tracking-tighter">FG</span>
+              </div>
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-white rounded flex items-center justify-center">
+                 <span className="text-[6px] text-neutral-900 font-black">DPM</span>
+              </div>
             </div>
-            <span className="font-bold text-white text-xl tracking-tight whitespace-nowrap">
-              {CHURCH_NAME}
+            <span className="font-black text-white text-2xl tracking-tighter uppercase italic">
+              (FGDPM)
             </span>
           </Link>
           <p className="text-sm leading-relaxed">
@@ -71,7 +76,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center text-xs">
-        <p>© {currentYear} {CHURCH_NAME}. All rights reserved.</p>
+        <p>© {currentYear} (FGDPM). All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

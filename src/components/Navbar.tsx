@@ -36,14 +36,19 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center transform group-hover:rotate-[15deg] transition-transform duration-300 shadow-lg shadow-brand-red/20">
-            <span className="text-white font-black text-xl italic">{CHURCH_SHORT_NAME[0]}</span>
+          <div className="relative">
+            <div className="w-11 h-11 bg-brand-red rounded-xl flex items-center justify-center transform group-hover:-rotate-6 transition-transform duration-500 shadow-xl shadow-brand-red/20">
+              <span className="text-white font-black text-xl italic tracking-tighter">FG</span>
+            </div>
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-neutral-900 rounded-lg border-2 border-white flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500">
+               <span className="text-[7px] text-white font-black">DPM</span>
+            </div>
           </div>
           <span className={cn(
-            'font-black text-xl tracking-tighter transition-colors duration-300 uppercase italic',
+            'font-black text-2xl tracking-tighter transition-colors duration-300 uppercase italic',
             scrolled || !isHome ? 'text-neutral-900' : 'text-white'
           )}>
-            {CHURCH_NAME}
+            (FGDPM)
           </span>
         </Link>
 
