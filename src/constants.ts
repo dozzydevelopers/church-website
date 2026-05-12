@@ -1,8 +1,12 @@
-export const CHURCH_NAME = "Faith and Grace House";
-export const CHURCH_TAGLINE = "Experience the Grace, Walk in Victory.";
+export const CHURCH_NAME = "Faith and Grace Deliverance Praying Ministries (FGDPM)";
+export const CHURCH_SHORT_NAME = "FGDPM";
+export const CHURCH_TAGLINE = "God of Wonders";
 export const SERVICE_TIMES = [
-  { day: "Sunday", services: ["8:00 AM", "10:30 AM", "1:00 PM"] },
-  { day: "Wednesday", services: ["6:00 PM (Midweek Service)"] }
+  { day: "Sunday", services: ["8:00 AM (Sunday School/Service)"] },
+  { day: "Tuesday", services: ["6:00 PM (Bible Study)"] },
+  { day: "Thursday", services: ["10:00 AM (Counseling Day)"] },
+  { day: "Saturday", services: ["7:00 AM (Sanitation)"] },
+  { day: "Last Friday", services: ["10:00 PM (General Night Vigil)"] }
 ];
 
 export const IMAGES = {

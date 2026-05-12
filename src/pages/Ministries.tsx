@@ -1,14 +1,15 @@
 import { motion } from 'motion/react';
 import { Users, Heart, Star, BookOpen, Music, ShieldCheck, Globe, ArrowUpRight } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { CHURCH_NAME, IMAGES } from '../constants';
+import { CHURCH_NAME } from '../constants';
 
 export default function Ministries() {
   const categories = [
     { name: "Children & Youth", icon: Heart, color: "text-rose-500", bg: "bg-rose-500/10" },
-    { name: "Worship & Arts", icon: Music, color: "text-amber-500", bg: "bg-amber-500/10" },
+    { name: "Worship & Arts", icon: Music, color: "text-brand-red", bg: "bg-brand-red/10" },
     { name: "Community Outreach", icon: Globe, color: "text-blue-500", bg: "bg-blue-500/10" },
     { name: "Education", icon: BookOpen, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+    { name: "Community", icon: Users, color: "text-neutral-900", bg: "bg-neutral-100" },
   ];
 
   const ministries = [
@@ -27,16 +28,16 @@ export default function Ministries() {
         {/* Header */}
         <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-10">
            <div className="max-w-2xl">
-             <span className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-4 inline-block">Find Your Place</span>
-             <h1 className="text-5xl md:text-8xl font-black text-neutral-900 tracking-tighter mb-8 leading-[0.9]">
+             <span className="text-brand-red font-black uppercase tracking-[0.3em] text-xs mb-8 inline-block px-4 py-1 border-l-4 border-brand-red italic">Find Your Place</span>
+             <h1 className="text-5xl md:text-8xl font-black text-neutral-900 tracking-tighter mb-8 leading-[0.9] uppercase italic">
                Discover Your <br />
-               <span className="text-amber-500 italic">Call.</span>
+               <span className="text-brand-red">Call.</span>
              </h1>
-             <p className="text-xl text-neutral-600 font-medium leading-relaxed">At {CHURCH_NAME}, ministry is not just about serving; it is about discovering your purpose and exercising your unique gifts for the glory of God.</p>
+             <p className="text-xl text-neutral-600 font-bold tracking-tight leading-relaxed">At {CHURCH_NAME}, ministry is not just about serving; it is about discovering your purpose and exercising your unique gifts for the glory of God.</p>
            </div>
            <div className="flex flex-wrap gap-4 justify-end">
               {categories.map((cat, i) => (
-                <div key={i} className={cn("px-6 py-4 rounded-2xl flex items-center space-x-3 border font-black text-xs uppercase tracking-widest cursor-pointer hover:scale-105 transition-all shadow-sm", cat.bg, cat.color)}>
+                <div key={i} className={cn("px-6 py-4 rounded-2xl flex items-center space-x-3 border font-black text-xs uppercase tracking-widest cursor-pointer hover:scale-105 transition-all shadow-sm italic", cat.bg, cat.color)}>
                    <cat.icon className="w-5 h-5" />
                    <span>{cat.name}</span>
                 </div>
@@ -53,7 +54,7 @@ export default function Ministries() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: i * 0.1 }}
-               className="group flex flex-col h-full overflow-hidden bg-white rounded-[3rem] border border-neutral-100 hover:border-amber-200 transition-all hover:shadow-2xl"
+               className="group flex flex-col h-full overflow-hidden bg-white rounded-[3rem] border-2 border-neutral-100 hover:border-brand-red transition-all hover:shadow-[0_40px_80px_-20px_rgba(220,38,36,0.15)]"
              >
                 <div className="relative aspect-[4/3] overflow-hidden shrink-0">
                    <img
@@ -62,19 +63,19 @@ export default function Ministries() {
                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                      referrerPolicy="no-referrer"
                    />
-                   <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-neutral-950/40 transition-colors" />
+                   <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-brand-red/40 transition-colors" />
                    <div className="absolute top-6 left-6">
                       <span className="px-5 py-2 bg-white/20 backdrop-blur-md rounded-full text-white text-[10px] font-black uppercase tracking-widest border border-white/30">{min.category}</span>
                    </div>
                 </div>
                 <div className="p-10 flex flex-col justify-between flex-1">
                    <div>
-                      <h3 className="text-3xl font-black text-neutral-900 group-hover:text-amber-500 transition-colors mb-6 tracking-tight">{min.title}</h3>
-                      <p className="text-neutral-500 font-medium leading-relaxed mb-10">{min.desc}</p>
+                      <h3 className="text-3xl font-black text-neutral-900 group-hover:text-brand-red transition-colors mb-6 tracking-tight uppercase italic">{min.title}</h3>
+                      <p className="text-neutral-500 font-bold leading-relaxed mb-10 text-sm">{min.desc}</p>
                    </div>
                    <div className="flex items-center justify-between mt-auto">
-                      <button className="text-[10px] font-black uppercase tracking-widest text-neutral-900 bg-neutral-100 px-6 py-3 rounded-full hover:bg-amber-500 hover:text-white transition-all shadow-sm">Learn More</button>
-                      <div className="w-10 h-10 border border-neutral-100 rounded-full flex items-center justify-center text-neutral-300 group-hover:text-amber-500 group-hover:border-amber-500 transition-colors">
+                      <button className="text-[10px] font-black uppercase tracking-widest text-neutral-900 bg-neutral-100 px-6 py-3 rounded-full hover:bg-brand-red hover:text-white transition-all shadow-sm italic">Learn More</button>
+                      <div className="w-10 h-10 border border-neutral-100 rounded-full flex items-center justify-center text-neutral-300 group-hover:text-brand-red group-hover:border-brand-red transition-colors">
                          <ArrowUpRight className="w-5 h-5" />
                       </div>
                    </div>
@@ -85,14 +86,14 @@ export default function Ministries() {
 
         {/* Volunteer CTA */}
         <section className="mt-40 p-20 bg-neutral-900 rounded-[4rem] text-center relative overflow-hidden">
-           <div className="absolute -top-20 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl" />
+           <div className="absolute -top-20 -left-20 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl" />
            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
            
            <div className="relative z-10 max-w-2xl mx-auto">
-              <Users className="w-12 h-12 text-amber-500 mx-auto mb-8" />
-              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-none">Ready to <br /> Make a Difference?</h2>
-              <p className="text-neutral-400 text-lg font-medium mb-12">Whether you can serve once a week or once a month, we have a place for you to impact lives.</p>
-              <button className="bg-amber-500 text-neutral-900 px-10 py-5 rounded-full font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-amber-500/20">
+              <Users className="w-12 h-12 text-brand-red mx-auto mb-8" />
+              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-none uppercase italic">Ready to <br /> Make a Difference?</h2>
+              <p className="text-neutral-400 text-lg font-bold mb-12 italic tracking-tight">Whether you can serve once a week or once a month, we have a place for you to impact lives.</p>
+              <button className="bg-brand-red text-white px-10 py-5 rounded-full font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-2xl uppercase tracking-widest italic">
                  Apply to Volunteer
               </button>
            </div>

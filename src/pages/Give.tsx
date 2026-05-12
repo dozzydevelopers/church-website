@@ -5,7 +5,7 @@ import { cn } from '../lib/utils';
 
 export default function Give() {
   const goals = [
-    { title: "Building Project Phase II", current: 750000, target: 1000000, color: "bg-amber-500" },
+    { title: "Building Project Phase II", current: 750000, target: 1000000, color: "bg-brand-red" },
     { title: "Outreach 2024 Fund", current: 45000, target: 100000, color: "bg-blue-500" },
     { title: "Global Missions", current: 120000, target: 200000, color: "bg-green-500" },
   ];
@@ -25,7 +25,7 @@ export default function Give() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-amber-500 font-bold uppercase tracking-widest text-xs mb-6 inline-block"
+            className="text-brand-red font-bold uppercase tracking-widest text-xs mb-6 inline-block"
           >
             Faithful Stewardship
           </motion.span>
@@ -36,7 +36,7 @@ export default function Give() {
             className="text-5xl md:text-8xl font-black text-neutral-900 tracking-tighter mb-8 leading-[0.9]"
           >
             Giving with <br />
-            <span className="text-amber-500 italic text-4xl md:text-7xl block md:inline">Purpose & Joy.</span>
+            <span className="text-brand-red italic text-4xl md:text-7xl block md:inline">Purpose & Joy.</span>
           </motion.h1>
           <motion.p
              initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function Give() {
              <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-neutral-100">
                 <div className="flex items-center justify-between mb-10">
                    <h2 className="text-2xl font-black text-neutral-900 tracking-tight">Current Vision Goals</h2>
-                   <TrendingUp className="w-6 h-6 text-amber-500" />
+                   <TrendingUp className="w-6 h-6 text-brand-red" />
                 </div>
                 
                 <div className="space-y-10">
@@ -90,7 +90,7 @@ export default function Give() {
 
              <div className="bg-neutral-900 p-10 rounded-[3rem] text-white overflow-hidden relative group">
                 <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform duration-1000">
-                   <Heart className="w-64 h-64 text-amber-500 fill-current" />
+                   <Heart className="w-64 h-64 text-brand-red fill-current" />
                 </div>
                 <div className="relative z-10">
                    <h2 className="text-3xl font-black mb-6 tracking-tight">Become a Ministry Partner</h2>
@@ -109,25 +109,25 @@ export default function Give() {
                 <h3 className="font-black text-xl mb-8 tracking-tight">Select Payment Method</h3>
                 <div className="space-y-4">
                    {paymentMethods.map((method, i) => (
-                     <div key={i} className="group p-6 rounded-2xl border border-neutral-100 hover:border-amber-500 cursor-pointer transition-all hover:bg-amber-50/50">
+                     <div key={i} className="group p-6 rounded-2xl border border-neutral-100 hover:border-brand-red cursor-pointer transition-all hover:bg-brand-red/5">
                         <div className="flex items-center space-x-4">
-                           <div className="w-12 h-12 bg-neutral-50 rounded-xl flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                           <div className="w-12 h-12 bg-neutral-50 rounded-xl flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-colors">
                               <method.icon className="w-6 h-6" />
                            </div>
                            <div className="flex-1">
                               <p className="font-bold text-neutral-900">{method.name}</p>
                               <p className="text-xs text-neutral-500 font-medium">{method.desc}</p>
                            </div>
-                           <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-amber-500 group-hover:translate-x-1 transition-all" />
+                           <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-brand-red group-hover:translate-x-1 transition-all" />
                         </div>
                      </div>
                    ))}
                 </div>
              </div>
 
-             <div className="bg-amber-500/10 border border-amber-500/20 p-8 rounded-[2.5rem]">
+             <div className="bg-brand-red/10 border border-brand-red/20 p-8 rounded-[2.5rem]">
                 <div className="flex items-center space-x-3 mb-6">
-                   <ShieldCheck className="w-6 h-6 text-amber-500" />
+                   <ShieldCheck className="w-6 h-6 text-brand-red" />
                    <h4 className="font-bold text-neutral-900 uppercase tracking-widest text-xs">Secure Giving</h4>
                 </div>
                 <p className="text-sm text-neutral-600 font-medium leading-relaxed">All transactions are encrypted and secured. We use industry-standard payment processors to ensure your data is always protected.</p>

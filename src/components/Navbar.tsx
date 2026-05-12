@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Play, Heart, MapPin, Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
-import { CHURCH_NAME } from '../constants';
+import { CHURCH_NAME, CHURCH_SHORT_NAME } from '../constants';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +35,12 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-neutral-900 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-            <span className="text-amber-400 font-bold text-xl">S</span>
+        <Link to="/" className="flex items-center space-x-3 group">
+          <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center transform group-hover:rotate-[15deg] transition-transform duration-300 shadow-lg shadow-brand-red/20">
+            <span className="text-white font-black text-xl italic">{CHURCH_SHORT_NAME[0]}</span>
           </div>
           <span className={cn(
-            'font-bold text-xl tracking-tight transition-colors duration-300',
+            'font-black text-xl tracking-tighter transition-colors duration-300 uppercase italic',
             scrolled || !isHome ? 'text-neutral-900' : 'text-white'
           )}>
             {CHURCH_NAME}
@@ -54,7 +54,7 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={cn(
-                'text-sm font-medium tracking-wide hover:opacity-70 transition-opacity',
+                'text-xs font-black tracking-[0.2em] uppercase hover:text-brand-red transition-colors',
                 scrolled || !isHome ? 'text-neutral-900' : 'text-white'
               )}
             >
@@ -63,7 +63,7 @@ export default function Navbar() {
           ))}
           <Link
             to="/live"
-            className="flex items-center space-x-2 bg-amber-500 hover:bg-amber-600 px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-amber-500/20"
+            className="flex items-center space-x-2 bg-brand-red hover:bg-brand-red/90 px-6 py-3 rounded-full text-white text-xs font-black tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-red/30"
           >
             <Play className="w-4 h-4 fill-current" />
             <span>WATCH LIVE</span>
@@ -97,7 +97,7 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-semibold text-neutral-900 hover:text-amber-500 transition-colors"
+                  className="text-lg font-black uppercase italic text-neutral-900 hover:text-brand-red transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
               <Link
                 to="/live"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center space-x-2 bg-amber-500 p-4 rounded-xl text-white font-bold"
+                className="flex items-center justify-center space-x-2 bg-brand-red p-4 rounded-xl text-white font-black uppercase italic shadow-lg shadow-brand-red/20"
               >
                 <Play className="w-5 h-5 fill-current" />
                 <span>WATCH LIVE</span>

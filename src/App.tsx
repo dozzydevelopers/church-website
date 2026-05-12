@@ -13,7 +13,10 @@ import Events from './pages/Events';
 import Ministries from './pages/Ministries';
 import Give from './pages/Give';
 import Live from './pages/Live';
+import NewBelievers from './pages/NewBelievers';
+import GrowthTrack from './pages/GrowthTrack';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 
 export default function App() {
   return (
@@ -30,6 +33,9 @@ export default function App() {
             <Route path="/give" element={<Give />} />
             <Route path="/live" element={<Live />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/new-believers" element={<NewBelievers />} />
+            <Route path="/growth-track" element={<GrowthTrack />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
